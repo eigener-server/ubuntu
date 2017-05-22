@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 RUN apt-get update && \
-    apt-get -y --no-install-recommends net-tools && \
+    apt-get -y --no-install-recommends install net-tools && \
     apt-get clean && \
 rm -rf /var/lib/apt/lists/*
 
