@@ -10,6 +10,8 @@ RUN rm -rf /etc/service/sshd /etc/my_init.d/00_regen_ssh_host_keys.sh
 
 # Timezone
 ENV TZ=Europe/Zurich
-RUN cp /usr/share/zoneinfo/$TZ /etc/localtime && \
+RUN ls /usr/share/zoneinfo/ && \
+    ls /usr/share/zoneinfo/Europe/ && \
+    cp /usr/share/zoneinfo/$TZ /etc/localtime && \
     echo $TZ > /etc/timezone && \
     dpkg-reconfigure -f noninteractive tzdata
