@@ -13,3 +13,10 @@ ENV TZ Europe/Zurich
 RUN echo ${TZ} >/etc/timezone && \
     ln -sf /usr/share/zoneinfo/${TZ} /etc/localtime && \
     dpkg-reconfigure -f noninteractive tzdata
+
+# Fix Let's Encrypt CA not included in Ubuntu's CA bundle
+RUN apt-get update && \
+  apt-get -y --no-install-recommends install --reinstall ca-certificates \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
+
