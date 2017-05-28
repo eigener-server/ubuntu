@@ -1,1 +1,1 @@
-docker run -ti dev_ubuntu /bin/bash
+docker run -ti --rm ubuntu /bin/bash

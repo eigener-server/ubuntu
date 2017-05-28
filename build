@@ -1,1 +1,1 @@
-docker build -t dev_ubuntu .
+docker build -t ubuntu .
